@@ -34,7 +34,7 @@ if sleep_hours == 24:
 if 0 < sleep_hours < 5:
     st.info("Note: You have entered less than 5 hours of sleep. Make sure this reflects your actual sleeping habits. Remember, even vampires need a good nap to keep their fangs sharp!")
 if 12 < sleep_hours < 24:
-    st.info("Note: You have entered more than 12 hours of sleep. Make sure this reflects your actual sleeping habits. But Sleeping beauty, is that you? That's a lot of beauty rest!")
+    st.info("Note: You have entered more than 12 hours of sleep. Make sure this reflects your actual sleeping habits. But sleeping beauty, is that you? That's a lot of beauty rest!")
 
 # 當使用者點擊按鈕時執行計算
 if st.button("Start Calculation"):
