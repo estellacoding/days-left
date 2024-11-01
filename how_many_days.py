@@ -17,11 +17,11 @@ def calculate_awake_days(total_age, current_age, sleep_hours):
     awake_days = int(total_days * awake_hours_ratio)
     return awake_days
 
-def calculate_daily_countdown():
-    # 取得本地時區資訊
-    local_tz = get_local_timezone()
-    # 取得當前當地時間
-    now = datetime.datetime.now(local_tz)
+def calculate_daily_countdown(selected_timezone):
+    # 取得使用者選擇時區
+    local_tz = get_local_timezone(selected_timezone)
+    # 取得使用者選擇時區的當地時間
+    now = datetime.datetime.now(local_tz) 
     
     # 設定當天結束時間為 23:59:59.999999
     end_of_day = datetime.datetime.combine(
