@@ -26,13 +26,16 @@ def calculate_daily_countdown():
     end_of_day = datetime.datetime.combine(
         now.date(), datetime.time(23, 59, 59, 999999, tzinfo=local_tz)
     )
+    
     # 計算當前時間與當天結束時間之間的剩餘時間
     remaining_time = end_of_day - now
+    # print(f"Now: {now}, End of Day: {end_of_day}, Remaining Time: {remaining_time}")
     
+    # 取得當天剩餘時間的總秒數
     total_seconds = int(remaining_time.total_seconds())
     # 使用 divmod 函數將剩餘的秒數轉換為小時和剩餘秒數
     hours, remaining_seconds = divmod(total_seconds, 3600)
-     # 使用 divmod 函數將剩餘秒數轉換為分鐘和秒
+    # 使用 divmod 函數將剩餘秒數轉換為分鐘和秒
     minutes, seconds = divmod(remaining_seconds, 60)
     
     # 返回當天剩餘小時、分鐘和秒數
