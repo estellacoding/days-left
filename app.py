@@ -18,7 +18,6 @@ sleep_hours = st.number_input("Please enter your average sleep hours per day:", 
 # 使用者選擇時區
 timezones = pytz.all_timezones
 selected_timezone = st.selectbox("Select your timezone:", timezones, index=timezones.index("Asia/Taipei"))
-local_tz = get_local_timezone(selected_timezone)
 
 # 輸入有警告情況則不執行計算結果
 has_warning = False
@@ -73,7 +72,7 @@ if st.button("Start Calculation"):
 
             while True:
                 # 取得當天剩餘的時、分、秒
-                hours, minutes, seconds = calculate_daily_countdown()
+                hours, minutes, seconds = calculate_daily_countdown(selected_timezone)
 
                 # 顯示倒數計時
                 countdown_placeholder.markdown(
