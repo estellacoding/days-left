@@ -33,7 +33,7 @@ days-left
 ```
 
 # 執行程式
-## 啟動 Streamlit
+## 啟動Streamlit
 ```
 streamlit run app.py
 ```
@@ -43,6 +43,6 @@ streamlit run app.py
 ## 輸入資料
 - 輸入預期壽命 (預設 80 歲)。
 - 輸入您的目前年齡 (預設 30 歲)。
-- 輸入您的平均每日睡眠時數 (預設 8 小時)。
+- 輸入您的每日平均睡眠時數 (預設 8 小時)。
 - 點擊「Start Calculation」按鈕。
 - 就會開始計算並顯示可用天數。
