@@ -73,7 +73,7 @@ if st.button("Start Calculation"):
 
                 # 顯示倒數計時
                 countdown_placeholder.markdown(
-                    f"<div style='font-size: 17px; font-weight: light; color: black; text-align: center;'>"
+                    f"<div style='font-size: 17px; font-weight: light; color: red; text-align: center;'>"
                     f"{hours} hours: {minutes} minutes: {seconds} seconds"
                     f"</div>",
                     unsafe_allow_html=True
