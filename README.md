@@ -2,7 +2,7 @@
 
 How Many Days Left? 是一個互動式的 Streamlit 應用程式，讓使用者以視覺化的方式計算可用天數。
 
-受到 [Andrew Ng - How to Build Your Career in AI](https://info.deeplearning.ai/how-to-build-a-career-in-ai-book) 啟發下，完成這個工具，想提醒自己人生最重要的事情是什麼？無論今天選擇什麼，它值得你有限的 1/30,000 壽命之一嗎？讓每一天都變得意義非凡吧!
+受到 [Andrew Ng - How to Build Your Career in AI](https://info.deeplearning.ai/how-to-build-a-career-in-ai-book) 啟發下，完成這個工具，想提醒自己人生最重要的事情是什麼？無論今天選擇什麼，它值得你有限的 1/30,000 壽命之一嗎？讓每一天都變得意義非凡吧！
 
 # 主要功能
 - 計算可用天數：根據使用者輸入的預期壽命、目前年齡與每日睡眠時數，計算從現在到預期壽命的可用天數。
