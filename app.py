@@ -48,8 +48,8 @@ if st.button("Start Calculation"):
 
         # 網頁標題
         st.markdown(
-        "<h1 style='font-size: 26px; text-align: left;'>Days Countdown:</h1></h1>",
-        unsafe_allow_html=True
+            "<h1 style='font-size: 26px; text-align: left;'>Days Countdown:</h1>",
+            unsafe_allow_html=True
         )
 
         # 顯示清醒天數
@@ -65,20 +65,22 @@ if st.button("Start Calculation"):
             # 創建一個空的佔位符，用於顯示倒數計時
             countdown_placeholder = st.empty()
 
-            while True:
+            # 使用 Streamlit 的自動重新整理功能來實現倒數計時
+            for _ in range(awake_days * 24 * 3600):  # 每秒更新一次
                 # 取得當天剩餘的時、分、秒
                 hours, minutes, seconds = calculate_daily_countdown()
 
                 # 顯示倒數計時
                 countdown_placeholder.markdown(
-                    f"<div style='font-size: 17px; font-weight: light; color: red; text-align: center;'>"
-                    f"{hours} hours: {minutes} minutes: {seconds} seconds"
+                    f"<div style='font-size: 24px; font-weight: light; color: red; text-align: center;'>"
+                    f"Time left today: {hours} hours: {minutes} minutes: {seconds} seconds"
                     f"</div>",
                     unsafe_allow_html=True
                 )
 
-                # 剩餘時間為0，結束迴圈
-                if hours <= 0 and minutes <= 0 and seconds <= 0:
+                # 如果剩餘時間為0，則結束迴圈
+                if hours == 0 and minutes == 0 and seconds == 0:
                     break
 
+                # 每秒更新一次
                 time.sleep(1)
