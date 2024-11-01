@@ -21,17 +21,15 @@ def calculate_daily_countdown():
     local_tz = get_local_timezone()
     # 取得本地時區時間
     now = datetime.datetime.now(local_tz)
-
-    # 獲取明天的日期
-    tomorrow = now.date() + datetime.timedelta(days=1)
-    # 設定今天午夜 (明天 00:00:00) 作為結束時間點
-    end_of_day = datetime.datetime.combine(tomorrow, datetime.time(0, 0, 0))
-    end_of_day = local_tz.localize(end_of_day) if not end_of_day.tzinfo else end_of_day
-
+    
+    # 設定當天結束時間為 23:59:59.999999
+    end_of_day = datetime.datetime.combine(
+        now.date(), datetime.time(23, 59, 59, 999999, tzinfo=local_tz)
+    )
     # 計算當前時間與當天結束時間之間的剩餘時間
     remaining_time = end_of_day - now
-    total_seconds = int(remaining_time.total_seconds())
     
+    total_seconds = int(remaining_time.total_seconds())
     # 使用 divmod 函數將剩餘的秒數轉換為小時和剩餘秒數
     hours, remaining_seconds = divmod(total_seconds, 3600)
      # 使用 divmod 函數將剩餘秒數轉換為分鐘和秒
