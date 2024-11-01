@@ -26,7 +26,7 @@ pip install -r requirements.txt
 # 專案結構
 ```
 days-left
-├── app.py                # 主應用程式
+├── app.py                # Streamlit 主應用程式
 ├── how_many_days.py      # 計算邏輯函數
 ├── README.md
 └── requirements.txt
