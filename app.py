@@ -1,7 +1,8 @@
 # app.py
 import streamlit as st
-from how_many_days import calculate_total_days, calculate_awake_days, calculate_daily_countdown
+from how_many_days import calculate_total_days, calculate_awake_days, calculate_daily_countdown, get_local_timezone
 import time
+import pytz
 
 # 網頁標題
 st.markdown(
@@ -13,6 +14,11 @@ st.markdown(
 total_age = st.number_input("Please enter the typical human lifespan:", min_value=0, max_value=150, value=80, step=1)
 current_age = st.number_input("Please enter your current age:", min_value=0, max_value=150, value=30, step=1)
 sleep_hours = st.number_input("Please enter your average sleep hours per day:", min_value=0, max_value=24, value=8, step=1)
+
+# 使用者選擇時區
+timezones = pytz.all_timezones
+selected_timezone = st.selectbox("Select your timezone:", timezones, index=timezones.index("Asia/Taipei"))
+local_tz = get_local_timezone(selected_timezone)
 
 # 輸入有警告情況則不執行計算結果
 has_warning = False
@@ -82,3 +88,4 @@ if st.button("Start Calculation"):
                     break
 
                 time.sleep(1)
+
